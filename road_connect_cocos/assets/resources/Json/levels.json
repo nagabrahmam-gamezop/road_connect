@@ -1,0 +1,26 @@
+{
+    "level_1":{
+        "rows":2,
+        "columns":2,
+        "piece_1": {
+            "placementId":0,
+            "target": 90,
+            "start": 0
+        },
+        "piece_2": {
+            "placementId":1,
+            "target": 180,
+            "start": 0
+        },
+        "piece_3": {
+            "placementId":2,
+            "target": 90,
+            "start": 0
+        },
+        "piece_4": {
+            "placementId":3,
+            "target": 180,
+            "start": 0
+        }
+    }
+}
