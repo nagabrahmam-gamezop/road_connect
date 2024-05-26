@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, tween, UIOpacity, Vec3 } from 'cc';
+import { _decorator, AudioSource, Component, math, Node, tween, UIOpacity, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('GridPiece')
@@ -6,14 +6,24 @@ export class GridPiece extends Component {
 
     @property(Node)
     private roadNode : Node
+
+    @property(AudioSource)
+    private audioNode : AudioSource;
+
     private isRotating : boolean = false;
 
 
     start() {
         console.log(" start scale tween :> ");
-        
+        if (this.roadNode == null) {
+            return;
+        }
+        let delay = math.randomRange(0, 0.5);
+
         this.roadNode.setScale(new Vec3(0, 0, 0));
-        tween(this.roadNode).to(0.25, {
+        tween(this.roadNode)
+        .delay(delay)
+        .to(0.25, {
             scale : new Vec3(1, 1, 1)
         }).start();
     }
@@ -23,11 +33,14 @@ export class GridPiece extends Component {
     }
 
     rotate() {
+        if (this.roadNode == null) {
+            return;
+        }
         if (this.isRotating) {
             return;
         }
 
-        tween(this.node).by(0.1, {angle : 90}, {
+        tween(this.roadNode).by(0.1, {angle : 90}, {
             onStart: this.onRotationStart.bind(this),
             onComplete: this.onRotationEnd.bind(this)
         }).start();
@@ -40,6 +53,14 @@ export class GridPiece extends Component {
 
     onRotationEnd(){
         this.isRotating=false;
+    }
+
+    setStartRotation(value : number){
+        this.roadNode.angle  = value;
+    }
+
+    setEmpty(){
+        this.node.removeAllChildren();
     }
 }
 
