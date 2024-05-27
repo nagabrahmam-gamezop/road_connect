@@ -167,13 +167,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 58,
-      "g": 255,
-      "b": 137,
+      "r": 104,
+      "g": 200,
+      "b": 170,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "d3fc5b91-943d-4b91-9fa9-d0f5d551a150@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -345,11 +345,11 @@
       "height": 40
     },
     "_startAxis": 0,
-    "_paddingLeft": 40,
+    "_paddingLeft": 60,
     "_paddingRight": 0,
     "_paddingTop": 40,
     "_paddingBottom": 0,
-    "_spacingX": 40,
+    "_spacingX": 60,
     "_spacingY": 40,
     "_verticalDirection": 1,
     "_horizontalDirection": 0,
